@@ -29,6 +29,72 @@ public class ObraServico {
 	@NotNull
 	private String DescricaoObraServico;
 	
+	public ObraServico() {
+		
+	}
+	
+	
+	public int getIdObraServico() {
+		return IdObraServico;
+	}
+	public void setIdObraServico(int idObraServico) {
+		IdObraServico = idObraServico;
+	}
+	public String getNomeJurisdicionado() {
+		return NomeJurisdicionado;
+	}
+	public void setNomeJurisdicionado(String nomeJurisdicionado) {
+		NomeJurisdicionado = nomeJurisdicionado;
+	}
+	public String getNumeroProcessoDespesa() {
+		return NumeroProcessoDespesa;
+	}
+	public void setNumeroProcessoDespesa(String numeroProcessoDespesa) {
+		NumeroProcessoDespesa = numeroProcessoDespesa;
+	}
+	public String getAnoProcessoDespesa() {
+		return AnoProcessoDespesa;
+	}
+	public void setAnoProcessoDespesa(String anoProcessoDespesa) {
+		AnoProcessoDespesa = anoProcessoDespesa;
+	}
+	public String getNomeTipoRegimeExecucao() {
+		return NomeTipoRegimeExecucao;
+	}
+	public void setNomeTipoRegimeExecucao(String nomeTipoRegimeExecucao) {
+		NomeTipoRegimeExecucao = nomeTipoRegimeExecucao;
+	}
+	public String getNomeTipoIntervencao() {
+		return NomeTipoIntervencao;
+	}
+	public void setNomeTipoIntervencao(String nomeTipoIntervencao) {
+		NomeTipoIntervencao = nomeTipoIntervencao;
+	}
+	public String getOutroTipoIntervencao() {
+		return OutroTipoIntervencao;
+	}
+	public void setOutroTipoIntervencao(String outroTipoIntervencao) {
+		OutroTipoIntervencao = outroTipoIntervencao;
+	}
+	public String getOutroTipoObraServico() {
+		return OutroTipoObraServico;
+	}
+	public void setOutroTipoObraServico(String outroTipoObraServico) {
+		OutroTipoObraServico = outroTipoObraServico;
+	}
+	public String getNomeTipoSituacaoObraServico() {
+		return NomeTipoSituacaoObraServico;
+	}
+	public void setNomeTipoSituacaoObraServico(String nomeTipoSituacaoObraServico) {
+		NomeTipoSituacaoObraServico = nomeTipoSituacaoObraServico;
+	}
+	public String getDescricaoObraServico() {
+		return DescricaoObraServico;
+	}
+	public void setDescricaoObraServico(String descricaoObraServico) {
+		DescricaoObraServico = descricaoObraServico;
+	}
+	
 	
 
 }
