@@ -27,5 +27,10 @@ public class ObrasController {
 	public ObraServico obraPorID(@PathVariable Integer id) {
 		return obrasService.getOneById(id);
 	}
+	
+	@GetMapping("/obrasproximas/{latitude}/{longitude}")
+	public List<ObraServico> obrasProximas(@PathVariable String latitude, @PathVariable String longitude){
+		return obrasService.getByLatLong(latitude, longitude);
+	}
 
 }

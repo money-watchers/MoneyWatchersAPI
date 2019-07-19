@@ -14,7 +14,6 @@ public class ObraServico {
 	@Column(name="idobraservico")
 	private Integer IdObraServico;
 	
-	@NotNull
 	@Column(name="nomejurisdicionado")
 	private String NomeJurisdicionado;
 	

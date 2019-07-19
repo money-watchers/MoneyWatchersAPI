@@ -21,6 +21,11 @@ public class ObrasService {
 	public ObraServico getOneById(Integer ID) {
 		return obraRepository.getOne(ID);
 	}
+
+	public List<ObraServico> getByLatLong(String latitude, String longitude) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	
