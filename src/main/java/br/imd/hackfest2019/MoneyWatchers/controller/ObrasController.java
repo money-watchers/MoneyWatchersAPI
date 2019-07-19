@@ -35,5 +35,10 @@ public class ObrasController {
 	public List<ObraServico> obrasProximas(@PathVariable String latitude, @PathVariable String longitude){
 		return obrasService.getByLatLong(latitude, longitude);
 	}
+	
+	@GetMapping("/obras/{cidade}")
+	public List<ObraServico> obrasPorCidade(@PathVariable String cidade){
+		return null;
+	}
 
 }

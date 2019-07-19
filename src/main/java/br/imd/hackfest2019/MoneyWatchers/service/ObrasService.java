@@ -40,6 +40,10 @@ public class ObrasService {
 		return null;
 	}
 	
+	public List<ObraServico> getObraPorCidade(String cidade){
+		return null;
+	}
+	
 	
 	
 }

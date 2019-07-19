@@ -9,5 +9,6 @@ import jdk.nashorn.internal.runtime.FindProperty;
 
 @Repository
 public interface ObraRepository extends JpaRepository<ObraServico, Integer> {
+	
 
 }
