@@ -44,11 +44,11 @@ public class ItemAcompanhamentoObraServico {
 	@Column(name = "datamedicaoapi")
 	private String DataMedicaoAPI;
 	
-	@Column(name = "numeromedicaoreajusta")
-	private String NumeroMedicaoReajusta;
+	@Column(name = "numeromedicaoreajuste")
+	private String NumeroMedicaoReajuste;
 	
-	@Column(name = "valormedicaoreajusta")
-	private String ValorMedicaoReajusta;
+	@Column(name = "valormedicaoreajuste")
+	private String ValorMedicaoReajuste;
 	
 	@Column(name = "datamedicaoreajuste")
 	private Date DataMedicaoReajuste;
@@ -103,20 +103,20 @@ public class ItemAcompanhamentoObraServico {
 		DataMedicaoAPI = dataMedicaoAPI;
 	}
 
-	public String getNumeroMedicaoReajusta() {
-		return NumeroMedicaoReajusta;
+	public String getNumeroMedicaoReajuste() {
+		return NumeroMedicaoReajuste;
 	}
 
-	public void setNumeroMedicaoReajusta(String numeroMedicaoReajusta) {
-		NumeroMedicaoReajusta = numeroMedicaoReajusta;
+	public void setNumeroMedicaoReajuste(String numeroMedicaoReajuste) {
+		NumeroMedicaoReajuste = numeroMedicaoReajuste;
 	}
 
-	public String getValorMedicaoReajusta() {
-		return ValorMedicaoReajusta;
+	public String getValorMedicaoReajuste() {
+		return ValorMedicaoReajuste;
 	}
 
-	public void setValorMedicaoReajusta(String valorMedicaoReajusta) {
-		ValorMedicaoReajusta = valorMedicaoReajusta;
+	public void setValorMedicaoReajusta(String valorMedicaoReajuste) {
+		ValorMedicaoReajuste = valorMedicaoReajuste;
 	}
 
 	public Date getDataMedicaoReajuste() {

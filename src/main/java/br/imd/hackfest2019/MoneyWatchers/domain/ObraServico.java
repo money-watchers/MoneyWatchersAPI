@@ -1,16 +1,12 @@
 package br.imd.hackfest2019.MoneyWatchers.domain;
 
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
@@ -56,7 +52,7 @@ public class ObraServico {
 	@Column(name = "nometiposituacaoobraservico")
 	private String NomeTipoSituacaoObraServico;
 
-	@Column(name = "descricaoobraservico")
+	@Column(name = "descricaoobraservico", columnDefinition="TEXT")
 	private String DescricaoObraServico;
 
 	@OneToMany(/* cascade = CascadeType.ALL , , */mappedBy = "ObraServico", fetch = FetchType.EAGER)
@@ -73,6 +69,9 @@ public class ObraServico {
 	@OneToMany(/* cascade = CascadeType.ALL */fetch = FetchType.EAGER, mappedBy = "obraServico")
 	@Fetch(FetchMode.SUBSELECT)
 	private List<ItemAcompanhamentoObraServico> itemAcompanhamentoObraServico;
+	
+	@Column(name = "cnpj")
+	private String cnpj;
 
 	public ObraServico() {
 
@@ -192,6 +191,14 @@ public class ObraServico {
 
 	public void setIdObraServico(Integer idObraServico) {
 		IdObraServico = idObraServico;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 }

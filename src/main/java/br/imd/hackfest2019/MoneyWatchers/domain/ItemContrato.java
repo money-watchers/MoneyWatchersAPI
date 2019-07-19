@@ -48,7 +48,7 @@ public class ItemContrato {
 	@Column(name = "dataterminovigencia")
 	private Date DataTerminoVigencia;
 
-	@Column(name = "numeroordenservico")
+	@Column(name = "numeroordemservico")
 	private String NumeroOrdemServico;
 
 	@Column(name = "anoordemservico")
