@@ -1,6 +1,7 @@
 package br.imd.hackfest2019.MoneyWatchers.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 public class Denuncia {
 
 	@Id
+	@GeneratedValue
 	private Integer idDenuncia;
 	
 	
