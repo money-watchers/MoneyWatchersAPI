@@ -12,10 +12,9 @@ public class Denuncia {
 	@GeneratedValue
 	private Integer idDenuncia;
 	
-	
 	private String nome;
 	
-	private String telfeone;
+	private String telefone;
 	
 	private String email;
 	
@@ -34,12 +33,23 @@ public class Denuncia {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getTelfeone() {
-		return telfeone;
+	
+	public Integer getIdDenuncia() {
+		return idDenuncia;
 	}
-	public void setTelfeone(String telfeone) {
-		this.telfeone = telfeone;
+
+	public void setIdDenuncia(Integer idDenuncia) {
+		this.idDenuncia = idDenuncia;
 	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
 	public String getEmail() {
 		return email;
 	}
