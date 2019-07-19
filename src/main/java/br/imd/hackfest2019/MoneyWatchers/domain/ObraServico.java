@@ -1,32 +1,45 @@
 package br.imd.hackfest2019.MoneyWatchers.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="obraservico")
 public class ObraServico {
 	
 	@Id
-	private int IdObraServico;
+	@Column(name="idobraservico")
+	private Integer IdObraServico;
 	
 	@NotNull
+	@Column(name="nomejurisdicionado")
 	private String NomeJurisdicionado;
-	@NotNull
+	
+	@Column(name="numeroprocessodespesa")
 	private String NumeroProcessoDespesa;
-	@NotNull
+
+	@Column(name="anoprocessodespesa")
 	private String AnoProcessoDespesa;
-	@NotNull
+
+	@Column(name="nometiporegimeexecucao")
 	private String NomeTipoRegimeExecucao;
-	@NotNull
+
+	@Column(name="nometipointervencao")
 	private String NomeTipoIntervencao;
-	@NotNull
+
+	@Column(name="outrotipointervencao")
 	private String OutroTipoIntervencao;
-	@NotNull
+
+	@Column(name="outrotipoobraservico")
 	private String OutroTipoObraServico;
-	@NotNull
+
+	@Column(name="nometiposituacaoobraservico")
 	private String NomeTipoSituacaoObraServico;
-	@NotNull
+
+	@Column(name="descricaoobraservico")
 	private String DescricaoObraServico;
 	
 	public ObraServico() {

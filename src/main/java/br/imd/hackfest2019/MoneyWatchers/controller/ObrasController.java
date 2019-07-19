@@ -1,5 +1,7 @@
 package br.imd.hackfest2019.MoneyWatchers.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,9 +18,14 @@ public class ObrasController {
 	@Autowired
 	private ObrasService obrasService;
 	
+	@GetMapping("/obras")
+	private List<ObraServico> listarTodas(){
+		return obrasService.getTodasAsObras();
+	}
+	
 	@GetMapping("/{id}")
-	public ObraServico obraPorID(@PathVariable int id) {
-		return null;
+	public ObraServico obraPorID(@PathVariable Integer id) {
+		return obrasService.getOneById(id);
 	}
 
 }
