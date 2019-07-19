@@ -2,41 +2,62 @@ package br.imd.hackfest2019.MoneyWatchers.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
+@Table(name = "itemcontrato")
 public class ItemContrato {
 	
 	@Id
-	private int IdItemContrato;
+	@Column(name = "iditemcontrato")
+	@JsonProperty("id")
+	private Integer IdItemContrato;
 	
-	@NotNull
-	private int IdObraServico;
+	@ManyToOne /* (mappedBy = "itemContrato") */ 
+	@JoinColumn(name = "idobraservico", referencedColumnName = "idobraservico")
+	private ObraServico ObraServico;
 	
-	@NotNull
+	/*
+	 * @Column(name = "idobraservico_") private int IdObraServico;
+	 */
+
+	@Column(name = "numerocontrato")
 	private String NumeroContrato;
 	
-	@NotNull
+	@Column(name = "anocontrato")
 	private String AnoContrato;
-	
-	@NotNull
+
+	@Column(name = "valorcontrato")
 	private String ValorContrato;
 	
-	@NotNull
+	@Column(name = "dataterminovigencia")
 	private Date DataTerminoVigencia;
-	
-	@NotNull
+
+	@Column(name = "numeroordenservico")
 	private String NumeroOrdemServico;
-	
-	@NotNull
+
+	@Column(name = "anoordemservico")
 	private String AnoOrdemServico;
 	
-	@NotNull
+	@Column(name = "prazoexecucao")
 	private String PrazoExecucao;
-	
-	@NotNull
+
+	@Column(name = "datainicioexecucao")
 	private Date DataInicioExecucao;
 	
 	public ItemContrato() {
@@ -51,13 +72,12 @@ public class ItemContrato {
 		IdItemContrato = idItemContrato;
 	}
 
-	public int getIdObraServico() {
-		return IdObraServico;
-	}
-
-	public void setIdObraServico(int idObraServico) {
-		IdObraServico = idObraServico;
-	}
+	/*
+	 * public int getIdObraServico() { return IdObraServico; }
+	 * 
+	 * public void setIdObraServico(int idObraServico) { IdObraServico =
+	 * idObraServico; }
+	 */
 
 	public String getNumeroContrato() {
 		return NumeroContrato;
@@ -121,6 +141,14 @@ public class ItemContrato {
 
 	public void setDataInicioExecucao(Date dataInicioExecucao) {
 		DataInicioExecucao = dataInicioExecucao;
+	}
+
+	public ObraServico getObraServico() {
+		return ObraServico;
+	}
+
+	public void setObraServico(ObraServico obraServico) {
+		ObraServico = obraServico;
 	}
 	
 	

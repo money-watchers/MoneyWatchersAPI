@@ -1,29 +1,48 @@
 package br.imd.hackfest2019.MoneyWatchers.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
+@Table(name = "itemaditamento")
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
 public class ItemAditamento {
 	
 	@Id
+	@Column(name = "iditemaditamento")
+	@JsonProperty("id")
 	private int IdItemAditamento;
 	
-	@NotNull
-	private int IdObraServico;
+	@ManyToOne
+	@JoinColumn(name = "idobraservico", referencedColumnName = "idobraservico")
+	private ObraServico ObraServico;
+
+	//private int IdObraServico;
 	
 	
-	@NotNull
+	@Column(name = "numerotermo")
 	private String NumeroTermo;
 	
-	@NotNull
+	@Column(name = "anotermo")
 	private String AnoTermo;
 	
-	@NotNull
+	@Column(name = "nometipoaditamento")
 	private String NomeTipoAditamento;
 	
-	@NotNull
+	@Column(name = "descricao")
 	private String Descricao;
 	
 	public ItemAditamento() {
@@ -36,14 +55,6 @@ public class ItemAditamento {
 
 	public void setIdItemAditamento(int idItemAditamento) {
 		IdItemAditamento = idItemAditamento;
-	}
-
-	public int getIdObraServico() {
-		return IdObraServico;
-	}
-
-	public void setIdObraServico(int idObraServico) {
-		IdObraServico = idObraServico;
 	}
 
 	public String getNumeroTermo() {
@@ -76,6 +87,14 @@ public class ItemAditamento {
 
 	public void setDescricao(String descricao) {
 		Descricao = descricao;
+	}
+
+	public ObraServico getObraServico() {
+		return ObraServico;
+	}
+
+	public void setObraServico(ObraServico obraServico) {
+		this.ObraServico = obraServico;
 	}
 	
 	

@@ -2,44 +2,61 @@ package br.imd.hackfest2019.MoneyWatchers.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
+@Table(name = "itemacompanhamentoobraservico")
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
 public class ItemAcompanhamentoObraServico {
 
 	@Id
+	@Column(name = "iditemacompanhamentoobraservico")
+	@JsonProperty("id")
 	private int IdItemAcompanhamentoObraServico;
 	
-	@NotNull
-	private int IdObraServico;
+	@ManyToOne
+	@JoinColumn(name = "idobraservico", referencedColumnName = "idobraservico")
+	private ObraServico obraServico;
 	
-	@NotNull
+	@Column(name = "nometiposituacaoexecucao")
 	private String NomeTipoSituacaoExecucao;
 	
-	@NotNull
+	@Column(name = "numeromedicaoapi")
 	private String NumeroMedicaoAPI;
 	
-	@NotNull
+	@Column(name = "valormedicaoapi")
 	private String ValorMedicaoAPI;
 	
-	@NotNull
+	@Column(name = "datamedicaoapi")
 	private String DataMedicaoAPI;
 	
-	@NotNull
+	@Column(name = "numeromedicaoreajusta")
 	private String NumeroMedicaoReajusta;
 	
-	@NotNull
+	@Column(name = "valormedicaoreajusta")
 	private String ValorMedicaoReajusta;
 	
-	@NotNull
+	@Column(name = "datamedicaoreajuste")
 	private Date DataMedicaoReajuste;
 	
-	@NotNull
+	@Column(name = "datarecebimentoprovisorio")
 	private Date DataRecebimentoProvisorio;
 	
-	@NotNull
+	@Column(name = "datarecebimentodefinitivo")
 	private Date DataRecebimentoDefinitivo;
 	
 	public ItemAcompanhamentoObraServico() {
@@ -52,14 +69,6 @@ public class ItemAcompanhamentoObraServico {
 
 	public void setIdItemAcompanhamentoObraServico(int idItemAcompanhamentoObraServico) {
 		IdItemAcompanhamentoObraServico = idItemAcompanhamentoObraServico;
-	}
-
-	public int getIdObraServico() {
-		return IdObraServico;
-	}
-
-	public void setIdObraServico(int idObraServico) {
-		IdObraServico = idObraServico;
 	}
 
 	public String getNomeTipoSituacaoExecucao() {
@@ -132,6 +141,14 @@ public class ItemAcompanhamentoObraServico {
 
 	public void setDataRecebimentoDefinitivo(Date dataRecebimentoDefinitivo) {
 		DataRecebimentoDefinitivo = dataRecebimentoDefinitivo;
+	}
+
+	public ObraServico getObraServico() {
+		return obraServico;
+	}
+
+	public void setObraServico(ObraServico obraServico) {
+		this.obraServico = obraServico;
 	}
 	
 	

@@ -1,27 +1,43 @@
 package br.imd.hackfest2019.MoneyWatchers.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
 @Entity
+@Table(name = "itemlocalizacaoobra")
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
 public class ItemLocalizacaoObra {
 	
 	@Id
-	@NotNull
-	private int IdItemLocalizacaoObra;
+	@Column(name = "iditemlocalizacaoobra")
+	@JsonProperty("id")
+	private Integer IdItemLocalizacaoObra;
 	
-	@NotNull
-	private int IdObraServico;
+	@ManyToOne
+	@JoinColumn(name = "idobraservico", referencedColumnName = "idobraservico")
+	private ObraServico ObraServico;
 	
-	@NotNull
+	@Column(name = "objeto")
 	private String objeto;
-	@NotNull
+	
+	@Column(name = "endereco")
 	private String endereco;
-	@NotNull
+	
+	@Column(name = "latitudeutm")
 	private String latitudeUTM;
-	@NotNull
+
+	@Column(name = "longitudeutm")
 	private String longitudeUTM;
 	
 	public ItemLocalizacaoObra() {
@@ -36,13 +52,6 @@ public class ItemLocalizacaoObra {
 		IdItemLocalizacaoObra = idItemLocalizacaoObra;
 	}
 
-	public int getIdObraServico() {
-		return IdObraServico;
-	}
-
-	public void setIdObraServico(int idObraServico) {
-		IdObraServico = idObraServico;
-	}
 
 	public String getObjeto() {
 		return objeto;
@@ -74,6 +83,14 @@ public class ItemLocalizacaoObra {
 
 	public void setLongitudeUTM(String longitudeUTM) {
 		this.longitudeUTM = longitudeUTM;
+	}
+
+	public ObraServico getObraServico() {
+		return ObraServico;
+	}
+
+	public void setObraServico(ObraServico obraServico) {
+		this.ObraServico = obraServico;
 	}
 	
 	
