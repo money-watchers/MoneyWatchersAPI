@@ -38,7 +38,8 @@ public class ObrasController {
 	
 	@GetMapping("/obras/{cidade}")
 	public List<ObraServico> obrasPorCidade(@PathVariable String cidade){
-		return null;
+		System.out.println(cidade);
+		return obrasService.getObraPorCidade(cidade);
 	}
 
 }

@@ -41,7 +41,8 @@ public class ObrasService {
 	}
 	
 	public List<ObraServico> getObraPorCidade(String cidade){
-		return null;
+		
+		return obraRepository.findByCidade(cidade);
 	}
 	
 	
