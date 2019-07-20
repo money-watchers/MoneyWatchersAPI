@@ -21,6 +21,20 @@ public class ItemLocalizacaoObraService {
 		return itemLocalizacaoObraRepository.findAll();
 	}
 	
+	public List<LatLongDTO> getTodosLatLongNeg(){
+		List<ItemLocalizacaoObra> listLocalizacoes = itemLocalizacaoObraRepository.getAllNegativeLatLong();
+		List<LatLongDTO> listdto = new ArrayList<LatLongDTO>();
+		for (ItemLocalizacaoObra ilo : listLocalizacoes) {
+				LatLongDTO dto = new LatLongDTO();
+				
+				dto.setLatitude(ilo.getLatitudeUTM());
+				dto.setLongitude(ilo.getLongitudeUTM());
+				dto.setDescricao(ilo.getObjeto());
+				listdto.add(dto);
+		}
+		return listdto;
+	}
+	
 	public List<LatLongDTO> getTodosOsPontosLatLong(){
 		List<ItemLocalizacaoObra> listLocalizacoes = itemLocalizacaoObraRepository.findAll();
 		List<LatLongDTO> listdto = new ArrayList<LatLongDTO>();

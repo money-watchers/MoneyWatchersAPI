@@ -25,4 +25,9 @@ public class ItemLocalizacaoObraController {
 	public List<LatLongDTO> latLong(){
 		return itemLocalizacaoObraService.getTodosOsPontosLatLong();
 	}
+	
+	@GetMapping("/pontosObrasNegativos")
+	public List<LatLongDTO> latLongNegativo(){
+		return itemLocalizacaoObraService.getTodosLatLongNeg();
+	}
 }
