@@ -17,7 +17,10 @@ public interface ObraRepository extends JpaRepository<ObraServico, Integer> {
 	
 	@Query(value="SELECT * FROM obraservico WHERE nomejurisdicionado like UPPER('%' || :cidade || '%')", nativeQuery=true)
 	public List<ObraServico> findByCidade(@Param("cidade") String cidade);
-
+	
+	@Query(value = "SELECT DISTINCT cnpj FROM obraservico", nativeQuery = true)
+	public List<String> getAllCnpj();
+	
 	/*
 	 * @Query(value = "SELECT * FROM ") public List<ObraServico>
 	 * findByLatLong(@Param("latitute") String latitude, @Param("longitude") String

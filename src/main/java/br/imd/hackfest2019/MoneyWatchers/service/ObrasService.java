@@ -45,6 +45,9 @@ public class ObrasService {
 		return obraRepository.findByCidade(cidade);
 	}
 	
+	public List<String> getCnpjs(){
+		return obraRepository.getAllCnpj();
+	}
 	
 	
 }

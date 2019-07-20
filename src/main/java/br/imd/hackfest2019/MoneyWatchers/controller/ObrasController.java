@@ -44,4 +44,9 @@ public class ObrasController {
 		return obrasService.getObraPorCidade(cidade);
 	}
 
+	@GetMapping("/obras/empresas")
+	public List<String> todasAsEmpresas(){
+		return obrasService.getCnpjs();
+	}
+	
 }
