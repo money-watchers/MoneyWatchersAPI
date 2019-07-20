@@ -49,5 +49,7 @@ public class ObrasService {
 		return obraRepository.getAllCnpj();
 	}
 	
-	
+	public int getObrasByCnpj(String cnpj) {
+		return obraRepository.getObrasByCnpj(cnpj);
+	}
 }

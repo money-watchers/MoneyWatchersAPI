@@ -21,6 +21,8 @@ public interface ObraRepository extends JpaRepository<ObraServico, Integer> {
 	@Query(value = "SELECT DISTINCT cnpj FROM obraservico", nativeQuery = true)
 	public List<String> getAllCnpj();
 	
+	@Query(value = "SELECT COUNT(*) FROM obraservico GROUP BY cnpj HAVING cnpj = :cnpj", nativeQuery=true)
+	public int getObrasByCnpj(@Param("cnpj") String cnpj);
 	/*
 	 * @Query(value = "SELECT * FROM ") public List<ObraServico>
 	 * findByLatLong(@Param("latitute") String latitude, @Param("longitude") String

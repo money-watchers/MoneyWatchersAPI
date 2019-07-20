@@ -49,4 +49,9 @@ public class ObrasController {
 		return obrasService.getCnpjs();
 	}
 	
+	@GetMapping("/obras/empresas/{cnpj}")
+	public int getObrasByCnpj(@PathVariable String cnpj){
+		return obrasService.getObrasByCnpj(cnpj);
+	}
+	
 }
