@@ -15,7 +15,7 @@ import br.imd.hackfest2019.MoneyWatchers.service.DenunciaService;
 
 @RestController
 @RequestMapping("/api/v1/denuncia")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 public class DenunciaController {
 	
 	@Autowired
