@@ -16,7 +16,7 @@ import br.imd.hackfest2019.MoneyWatchers.service.ObrasService;
 
 @RestController
 @RequestMapping("/api/v1/obras")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ObrasController {
 	
 	@Autowired
